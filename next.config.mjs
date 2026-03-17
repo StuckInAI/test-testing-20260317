@@ -2,7 +2,7 @@
 const nextConfig = {
   output: "standalone",
   experimental: {
-    serverComponentsExternalPackages: ["typeorm", "better-sqlite3", "reflect-metadata"]
+    serverComponentsExternalPackages: ["typeorm", "better-sqlite3"]
   }
 };
 

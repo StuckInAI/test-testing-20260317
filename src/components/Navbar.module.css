@@ -1,0 +1,138 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1.25rem 0;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.nav.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+  padding: 0.875rem 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.02em;
+  transition: color 0.3s ease;
+}
+
+.nav.scrolled .logo {
+  color: #1a1a2e;
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.links a {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  transition: color 0.2s ease;
+}
+
+.nav.scrolled .links a {
+  color: #4a4a6a;
+}
+
+.links a:hover {
+  color: #ffffff;
+}
+
+.nav.scrolled .links a:hover {
+  color: #6c63ff;
+}
+
+.ctaLink {
+  background: #6c63ff !important;
+  color: #ffffff !important;
+  padding: 0.6rem 1.4rem;
+  border-radius: 50px;
+  font-weight: 600 !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+.ctaLink:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.4) !important;
+  color: #ffffff !important;
+}
+
+.menuBtn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #ffffff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav.scrolled .menuBtn {
+  color: #1a1a2e;
+}
+
+@media (max-width: 768px) {
+  .menuBtn {
+    display: block;
+  }
+
+  .links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    flex-direction: column;
+    gap: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-top: 1px solid #eee;
+  }
+
+  .links.open {
+    display: flex;
+  }
+
+  .links li {
+    width: 100%;
+  }
+
+  .links a {
+    display: block;
+    padding: 1rem 2rem;
+    color: #4a4a6a !important;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .links a:hover {
+    color: #6c63ff !important;
+    background: #f8f7ff;
+  }
+
+  .ctaLink {
+    border-radius: 0 !important;
+    padding: 1rem 2rem !important;
+    text-align: left;
+  }
+}
